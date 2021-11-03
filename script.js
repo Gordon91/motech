@@ -250,10 +250,9 @@ function validateCity() {
     else
         return "";
 }
-// setInterval(function runTimer() {
-//     var dt = new Date();
-//     document.getElementById('timer').innerHTML = dt.toLocaleString();
-// }, 1000)
+setInterval(function runTimer() {
+    var dt = new Date();
+    document.getElementById('timer').innerHTML = dt.toLocaleString();}, 1000);
 
 function addProductDropList() {
 
