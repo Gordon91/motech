@@ -102,7 +102,7 @@ function productlist1() {
 function quantitylist1() {
     var select = document.getElementById("quantity");
 
-    var options = ["--Please choose an option--", "1", "2", "3", "4","5"];
+    var options = ["--Please choose an option--", "1", "2", "3", "4", "5"];
 
     for (var i = 0; i < options.length; i++) {
         var opt = options[i];
@@ -113,10 +113,10 @@ function quantitylist1() {
     }
 }
 
-function statelist1(){
+function statelist1() {
     var select = document.getElementById("state");
 
-    var options = ["--Please choose an option--", "Johor", "Kedah", "Kelantan", "KualaLumpur","Melaka","Negeri Sembilan","Pahang","Perak","Perlis","Penang","Sabah","Sarawak","Selangor","Terengganu"];
+    var options = ["--Please choose an option--", "Johor", "Kedah", "Kelantan", "KualaLumpur", "Melaka", "Negeri Sembilan", "Pahang", "Perak", "Perlis", "Penang", "Sabah", "Sarawak", "Selangor", "Terengganu"];
 
     for (var i = 0; i < options.length; i++) {
         var opt = options[i];
@@ -250,10 +250,27 @@ function validateCity() {
     else
         return "";
 }
+// setInterval(function runTimer() {
+//     var dt = new Date();
+//     document.getElementById('timer').innerHTML = dt.toLocaleString();
+// }, 1000)
+
+function addProductDropList() {
+
+    var options = ["Apple", "Samsung", "Vivo", "Xiaomi"];
+    var links = ["product1.html", "product2.html", "product3.html", "product4.html"]
+    var m = 1;
+    for (var i = 0; i < options.length; i++) {
+        var node = document.createElement("li");
+        var a=document.createElement('a');
+        var textnode = document.createTextNode(options[i]);
+        a.href=links[i];
+        a.appendChild(textnode);
+        node.appendChild(a);
+        document.getElementById("productDropList").appendChild(node);
+    }
+
+}
 // function
 
 // "Enquiry on "
-setInterval(function runTimer() {
-    var dt = new Date();
-    document.getElementById('timer').innerHTML = dt.toLocaleString();
-}, 1000)
