@@ -97,6 +97,21 @@ function productlist1() {
         el.value = opt;
         select.appendChild(el);
     }
+    switch (sessionStorage.getItem('item_id')) {
+        case "Apple":
+            select.selectedIndex=1;
+            break;
+        case "Samsung":
+            select.selectedIndex=2;
+            break;
+        case 'Vivo':
+            select.selectedIndex=3;
+            break;
+        case 'Xiaomi':
+            select.selectedIndex=4;
+            break;
+    }
+
 }
 
 function quantitylist1() {
@@ -252,7 +267,8 @@ function validateCity() {
 }
 setInterval(function runTimer() {
     var dt = new Date();
-    document.getElementById('timer').innerHTML = dt.toLocaleString();}, 1000);
+    document.getElementById('timer').innerHTML = dt.toLocaleString();
+}, 1000);
 
 function addProductDropList() {
 
@@ -261,9 +277,9 @@ function addProductDropList() {
     var m = 1;
     for (var i = 0; i < options.length; i++) {
         var node = document.createElement("li");
-        var a=document.createElement('a');
+        var a = document.createElement('a');
         var textnode = document.createTextNode(options[i]);
-        a.href=links[i];
+        a.href = links[i];
         a.appendChild(textnode);
         node.appendChild(a);
         document.getElementById("productDropList").appendChild(node);
