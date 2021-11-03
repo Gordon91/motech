@@ -253,3 +253,7 @@ function validateCity() {
 // function
 
 // "Enquiry on "
+setInterval(function runTimer() {
+    var dt = new Date();
+    document.getElementById('timer').innerHTML = dt.toLocaleString();
+}, 1000)
