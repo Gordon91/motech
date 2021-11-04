@@ -60,18 +60,7 @@ function validateForm() {
     return result;
 }
 
-//Store individual product page into sessionStorage
-function storeProduct(productName) {
-    var options = ["Pen", "Pencils", "Eraser", "Rulers"];
 
-    options.forEach(array);
-
-    function array(value) {
-        if (value == productName) {
-            sessionStorage.productIndex = options.indexOf(value);
-        }
-    }
-}
 
 //Fill the subject field with the value of product
 function storeSub() {
@@ -269,7 +258,10 @@ setInterval(function runTimer() {
     var dt = new Date();
     document.getElementById('timer').innerHTML = dt.toLocaleString();
 }, 1000);
-
+setInterval(function runTimer2() {
+    var dt = new Date();
+    document.getElementById('timer2').innerHTML = dt.toLocaleString();
+}, 1000);
 function addProductDropList() {
 
     var options = ["Apple", "Samsung", "Vivo", "Xiaomi"];
@@ -286,6 +278,30 @@ function addProductDropList() {
     }
 
 }
+// enchanecement dropdown
+function addenchancementDropList() {
+
+    var options = ["Enchancement1", "Enchancement2"];
+    var links = ["enchancement.html", "enchancement2.html"]
+    var m = 1;
+    for (var i = 0; i < options.length; i++) {
+        var node = document.createElement("li");
+        var a = document.createElement('a');
+        var textnode = document.createTextNode(options[i]);
+        a.href = links[i];
+        a.appendChild(textnode);
+        node.appendChild(a);
+        document.getElementById("enchancementDropList").appendChild(node);
+    }
+
+}
 // function
 
 // "Enquiry on "
+
+
+
+
+
+// Burger button
+ 
