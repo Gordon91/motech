@@ -262,6 +262,7 @@ setInterval(function runTimer2() {
     var dt = new Date();
     document.getElementById('timer2').innerHTML = dt.toLocaleString();
 }, 1000);
+
 function addProductDropList() {
 
     var options = ["Apple", "Samsung", "Vivo", "Xiaomi"];
@@ -278,6 +279,7 @@ function addProductDropList() {
     }
 
 }
+
 // enchanecement dropdown
 function addenchancementDropList() {
 
