@@ -35,8 +35,12 @@ function topFunction() {
 
 //store enquiry button
 function storeitem(item_id) {
+    // sessionStorage.setItem("product", brand);
     sessionStorage.setItem("item_id", item_id);
     window.location.replace("enquiry.html");
+}
+function storeproductbrand(brand) {
+    sessionStorage.setItem("product", brand);
 }
 function displayitem() {
     document.getElementById("sbj").value = "Enquiry on " + sessionStorage.getItem("item_id");
@@ -60,7 +64,18 @@ function validateForm() {
     return result;
 }
 
+//Store individual product page into sessionStorage
+function storeProduct(productName) {
+    var options = ["Pen", "Pencils", "Eraser", "Rulers"];
 
+    options.forEach(array);
+
+    function array(value) {
+        if (value == productName) {
+            sessionStorage.productIndex = options.indexOf(value);
+        }
+    }
+}
 
 //Fill the subject field with the value of product
 function storeSub() {
@@ -88,16 +103,16 @@ function productlist1() {
     }
     switch (sessionStorage.getItem('item_id')) {
         case "Apple":
-            select.selectedIndex=1;
+            select.selectedIndex = 1;
             break;
         case "Samsung":
-            select.selectedIndex=2;
+            select.selectedIndex = 2;
             break;
         case 'Vivo':
-            select.selectedIndex=3;
+            select.selectedIndex = 3;
             break;
         case 'Xiaomi':
-            select.selectedIndex=4;
+            select.selectedIndex = 4;
             break;
     }
 
@@ -132,7 +147,85 @@ function statelist1() {
 }
 
 //change the value of the session storage according to the new product selected by user
+function initializechange() {
+    var select = document.getElementById("product");
+    var preBrand = sessionStorage.getItem('product');
+    if (!preBrand)
+        change();
+    modelUpdate(preBrand);
+    var selectModel = document.getElementById("model");
+    switch (sessionStorage.getItem('product')) {
+        case "Apple":
+            switch (sessionStorage.getItem('item_id')) {
+                case 'Apple Iphone 11 Pro Max':
+                    selectModel.selectedIndex = 1;
+                    break;
+                case 'Apple Iphone 11 Pro':
+                    selectModel.selectedIndex = 2;
+                    break;
+                case 'Apple Iphone 11':
+                    selectModel.selectedIndex = 3;
+                    break;
+                case 'Apple Iphone SE':
+                    selectModel.selectedIndex = 4;
+                    break;
+            }
 
+            select.selectedIndex = 1;
+            break;
+        case "Samsung":
+            select.selectedIndex = 2;
+            switch (sessionStorage.getItem('item_id')) {
+                case 'Samsung Galaxy Z Flip3 5G':
+                    selectModel.selectedIndex = 1;
+                    break;
+                case 'Samsung Galaxy Z Fold 3':
+                    selectModel.selectedIndex = 2;
+                    break;
+                case 'Samsung Note 20 Ultra 5G':
+                    selectModel.selectedIndex = 3;
+                    break;
+                case 'Samsung Galaxy F22':
+                    selectModel.selectedIndex = 4;
+                    break;
+            }
+            break;
+        case 'Vivo':
+            select.selectedIndex = 3;
+            switch (sessionStorage.getItem('item_id')) {
+                case 'Vivo X70':
+                    selectModel.selectedIndex = 1;
+                    break;
+                case 'Vivo Y21':
+                    selectModel.selectedIndex = 2;
+                    break;
+                case 'Vivo S10':
+                    selectModel.selectedIndex = 3;
+                    break;
+                case 'Vivo Y73':
+                    selectModel.selectedIndex = 4;
+                    break;
+            }
+            break;
+        case 'Xiaomi':
+            select.selectedIndex = 4;
+            switch (sessionStorage.getItem('item_id')) {
+                case 'Xiaomi Redmi Note 8':
+                    selectModel.selectedIndex = 1;
+                    break;
+                case 'Xiaomi Redmi K40 Gaming':
+                    selectModel.selectedIndex = 2;
+                    break;
+                case 'Xiaomi Black Shark 4':
+                    selectModel.selectedIndex = 3;
+                    break;
+                case 'Xiaomi Redmi Note 10 Pro':
+                    selectModel.selectedIndex = 4;
+                    break;
+            }
+            break;
+    }
+}
 function change() {
     var product = document.getElementById("product").value;
     sessionStorage.product = product;
@@ -151,16 +244,15 @@ function modelUpdate(brand) {
             options = ["--Please choose an option--", "Iphone 11 Pro Max", "Iphone 11 Pro", "Iphone 11", "Iphone XR", "Iphone SE", ""];
             break;
         case "Samsung":
-            options = ["--Please choose an option--", "Galaxy Note 20 Ultra 5G", "Galaxy Note 20 5G", "Galaxy S20+ 5G", "Galaxy S20 5G", "Galaxy Fold 2 5G"];
+            options = ["--Please choose an option--", "Samsung Galaxy Z Flip3 5G", "Samsung Galaxy Z Fold 3", "Samsung Note 20 Ultra 5G", "Samsung Galaxy F22"];
             break;
         case "Vivo":
-            options = ["--Please choose an option--", "VIVO V19", "VIVO V17", "VIVO NEX 3", "VIVO V20SE", "VIVO S1"];
+            options = ["--Please choose an option--", "Vivo X70", "Vivo Y21", "Vivo S10", "Vivo Y73"];
             break;
         case "Xiaomi":
-            options = ["--Please choose an option--", "Xiaomi", "Xiaomi Mix 4", "Xiaomi Redmi Note 8", "Xiaomi Poco M3 Pro 5G", "Xiaomi Redmi K40 Gaming"];
+            options = ["--Please choose an option--", "Xiaomi Redmi Note 8", "Xiaomi Redmi K40 Gaming", "Xiaomi Black Shark 4", "Xiaomi Redmi Note 10 Pro"];
             break;
     }
-
     for (var i = 0; i < options.length; i++) {
         var opt = options[i];
         var el = document.createElement("option");
@@ -258,10 +350,6 @@ setInterval(function runTimer() {
     var dt = new Date();
     document.getElementById('timer').innerHTML = dt.toLocaleString();
 }, 1000);
-setInterval(function runTimer2() {
-    var dt = new Date();
-    document.getElementById('timer2').innerHTML = dt.toLocaleString();
-}, 1000);
 
 function addProductDropList() {
 
@@ -279,31 +367,6 @@ function addProductDropList() {
     }
 
 }
-
-// enchanecement dropdown
-function addenchancementDropList() {
-
-    var options = ["Enchancement1", "Enchancement2"];
-    var links = ["enchancement.html", "enchancement2.html"]
-    var m = 1;
-    for (var i = 0; i < options.length; i++) {
-        var node = document.createElement("li");
-        var a = document.createElement('a');
-        var textnode = document.createTextNode(options[i]);
-        a.href = links[i];
-        a.appendChild(textnode);
-        node.appendChild(a);
-        document.getElementById("enchancementDropList").appendChild(node);
-    }
-
-}
 // function
 
 // "Enquiry on "
-
-
-
-
-
-// Burger button
- 
