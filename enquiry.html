@@ -268,7 +268,7 @@
           </div>
           <div class="col-md-custom">
             <form name="emailform" id="contact-form" action="mailto:m.o.tech@gmail.com" method="post"
-              enctype="multipart/form-data" action="action_page.php" onsubmit="return validation()">
+              action="action_page.php" onsubmit="return validation()">
               <div style="overflow-x:auto;">
                 <fieldset>
                   <legend>Personal Information:</legend>
@@ -359,7 +359,7 @@
               <legend>Comments</legend>
 
               <div class="enquiry">
-                <form class="form" id="f" method="post" onsubmit="return validation()">
+                <form class="form" id="f" method="post" onsubmit="return validation();">
 
                   <label id="subject">Subject</label>
                   <div class="col70"><input type="text" id="sbj" name="subject" value=""></div>
@@ -369,9 +369,9 @@
             </fieldset></br>
 
             <fieldset>
-              <legend>Calculator</legend>
+              <legend>Date and Time</legend>
 
-
+              <span id='timer' onload="runTimer()"></span>
 
             </fieldset></br>
 
@@ -412,22 +412,22 @@
                         <font color=blue>Data Entry</font>
                       </th>
                     </tr>
-                    <tr>
+                    <tr style="text-align: center;">
                       <td bgcolor="#eeeee" style="text-align: center;">Loan Amount</td>
-                      <td bgcolor="#aaeeaa" align=right><input type=text name=loan size=10 "></td>
+                      <td bgcolor="#aaeeaa" align=right><input type=text name=loan size=10 style="width: 300px;"></td>
                     </tr>
                     <tr>
                       <td bgcolor=" #eeeee" style="text-align: center;">Loan Length in Months</td>
-                      <td bgcolor="#aaeeaa" align=right><input type=text name=months size=10></td>
+                      <td bgcolor="#aaeeaa" align=right><input type=text name=months size=10 style="width: 300px;"></td>
                     </tr>
                     <tr>
                       <td bgcolor="#eeeee" style="text-align: center;">Interest Rate</td>
-                      <td bgcolor="#aaeeaa" align=right><input type=text name=rate size=10></td>
+                      <td bgcolor="#aaeeaa" align=right><input type=text name=rate size=10 style="width: 300px;"></td>
                     </tr>
                     <tr>
                       <td bgcolor="#eeeee" style="text-align: center;">Monthly Payment</td>
-                      <td bgcolor="#eeaaaa" align=right style="text-align: center;"><em>Calculated</em> <input type=text
-                          name=pay size=10></td>
+                      <td bgcolor="#eeaaaa" align=right style="text-align: center;"><div><em>Calculated</em></div> <input type=text
+                          name=pay size=10 style="width: 300px;"></td>
                     </tr>
                     <tr>
                       <td bgcolor="#aaeeaa" align=center><input type=button onClick='showpay()' value=Calculate></td>
