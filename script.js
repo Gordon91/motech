@@ -248,7 +248,7 @@ function modelUpdate(brand) {
     var options;
     switch (brand) {
         case "Apple":
-            options = ["--Please choose an option--", "Iphone 11 Pro Max", "Iphone 11 Pro", "Iphone 11", "Iphone XR", "Iphone SE", ""];
+            options = ["--Please choose an option--", "Iphone 11 Pro Max", "Iphone 11 Pro", "Iphone 11", "Iphone SE"];
             break;
         case "Samsung":
             options = ["--Please choose an option--", "Samsung Galaxy Z Flip3 5G", "Samsung Galaxy Z Fold 3", "Samsung Note 20 Ultra 5G", "Samsung Galaxy F22"];
@@ -275,6 +275,14 @@ function validation() {
     validate = validateName() + validateLastName() + validatePhoneNumber() + validateEmail() + validateSubject() + validateMessage() + validateAddress() + validateCity();
     if (validate == "") {
         alert("Fill in succcessful");
+        var comment = document.getElementById("comment");
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + " Hours " + today.getMinutes() + " Minutes " + today.getSeconds() + " Seconds";
+        var dateTime = date + ' ' + time;
+        comment.value = comment.value + " " + dateTime;
+        alert(dateTime);
+        alert(comment.value);
         return true;
     }
     else {
