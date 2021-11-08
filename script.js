@@ -383,5 +383,23 @@ function addProductDropList() {
 
 }
 // function
+/* enchancement *
+-------------------------------------------------------*/
+function addenchancementDropList() {
+
+    var options = ["Enchancement1", "Enchancement2",];
+    var links = ["enchancement.html", "enchancement2.html"]
+    var m = 1;
+    for (var i = 0; i < options.length; i++) {
+        var node = document.createElement("li");
+        var a = document.createElement('a');
+        var textnode = document.createTextNode(options[i]);
+        a.href = links[i];
+        a.appendChild(textnode);
+        node.appendChild(a);
+        document.getElementById("enchancementDropList").appendChild(node);
+    }
+}
+// function
 
 // "Enquiry on "
