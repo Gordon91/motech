@@ -241,7 +241,7 @@ function modelUpdate(brand) {
     var options;
     switch (brand) {
         case "Apple":
-            options = ["--Please choose an option--", "Iphone 11 Pro Max", "Iphone 11 Pro", "Iphone 11", "Iphone XR", "Iphone SE", ""];
+            options = ["--Please choose an option--", "Iphone 11 Pro Max", "Iphone 11 Pro", "Iphone 11", "Iphone SE"];
             break;
         case "Samsung":
             options = ["--Please choose an option--", "Samsung Galaxy Z Flip3 5G", "Samsung Galaxy Z Fold 3", "Samsung Note 20 Ultra 5G", "Samsung Galaxy F22"];
