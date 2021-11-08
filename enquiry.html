@@ -337,7 +337,7 @@
 
               <td>
                 <div class="select relative">
-                  <select name="model" id="model">
+                  <select name="model" id="model" onchange="modelChange()">
                     <option value="">--Please choose an option--</option>
                   </select><br>
 
@@ -417,7 +417,7 @@
                       <td bgcolor="#aaeeaa" align=right><input type=text name=loan size=10 "></td>
                     </tr>
                     <tr>
-                      <td bgcolor="#eeeee" style="text-align: center;">Loan Length in Months</td>
+                      <td bgcolor=" #eeeee" style="text-align: center;">Loan Length in Months</td>
                       <td bgcolor="#aaeeaa" align=right><input type=text name=months size=10></td>
                     </tr>
                     <tr>
@@ -426,7 +426,8 @@
                     </tr>
                     <tr>
                       <td bgcolor="#eeeee" style="text-align: center;">Monthly Payment</td>
-                      <td bgcolor="#eeaaaa" align=right style="text-align: center;"><em>Calculated</em> <input type=text name=pay size=10></td>
+                      <td bgcolor="#eeaaaa" align=right style="text-align: center;"><em>Calculated</em> <input type=text
+                          name=pay size=10></td>
                     </tr>
                     <tr>
                       <td bgcolor="#aaeeaa" align=center><input type=button onClick='showpay()' value=Calculate></td>
