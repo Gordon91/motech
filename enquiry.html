@@ -371,7 +371,7 @@
             <fieldset>
               <legend>Date and Time</legend>
 
-              <span id='timer' onload="runTimer()"></span>
+              <span id='timer2' onload="runTimer2()"></span>
 
             </fieldset></br>
 
@@ -394,12 +394,13 @@
               They will be a close approximation of actual loan
               repayments if available at the terms entered, from a financial institution. This
               is being
-              provided for you to plan your next loan application. To use, enter values
+              provided for you to plan your next loan application. To use, <span id="dots">...</span><span id="more"> enter values
               for the
               Loan Amount, Number of Months for Loan, and the Interest Rate (e.g.
               7.25), and
               click the Calculate button. Clicking the Reset button will clear entered
-              values.</p>
+              values.</span></p>
+			  <button class="btn btn-lg btn-color btn-submit" onclick="myFunctionread()" id="myBtnr">Read Less</button></br></br>
             <div style="overflow-x:auto;">
               <center>
                 <form name=calc method=POST>

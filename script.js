@@ -64,18 +64,7 @@ function validateForm() {
     return result;
 }
 
-//Store individual product page into sessionStorage
-function storeProduct(productName) {
-    var options = ["Pen", "Pencils", "Eraser", "Rulers"];
 
-    options.forEach(array);
-
-    function array(value) {
-        if (value == productName) {
-            sessionStorage.productIndex = options.indexOf(value);
-        }
-    }
-}
 
 //Fill the subject field with the value of product
 function storeSub() {
@@ -400,6 +389,114 @@ function addenchancementDropList() {
         document.getElementById("enchancementDropList").appendChild(node);
     }
 }
-// function
 
-// "Enquiry on "
+/* timer 2 *
+-------------------------------------------------------*/
+setInterval(function runTimer2() {
+    var dt = new Date();
+    document.getElementById('timer2').innerHTML = dt.toLocaleString();
+}, 1000);
+
+
+/* Read less *
+-------------------------------------------------------*/
+var i = 0;
+function myFunctionread() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtnr");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+	i = 1;
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+	i = 0;
+  }
+}
+
+
+
+var i = 0;
+function myFunctionproducta1() {
+  var dots = document.getElementById("dotsa1");
+  var moreText = document.getElementById("morea1");
+  var btnText = document.getElementById("myBtna1");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+	i = 1;
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+	i = 0;
+  }
+}
+
+var i = 0;
+function myFunctionproducta2() {
+  var dots = document.getElementById("dotsa2");
+  var moreText = document.getElementById("morea2");
+  var btnText = document.getElementById("myBtna2");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+	i = 1;
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+	i = 0;
+  }
+}
+
+var i = 0;
+function myFunctionproducta3() {
+  var dots = document.getElementById("dotsa3");
+  var moreText = document.getElementById("morea3");
+  var btnText = document.getElementById("myBtna3");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+	i = 1;
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+	i = 0;
+  }
+}
+
+var i = 0;
+function myFunctionproducta4() {
+  var dots = document.getElementById("dotsa4");
+  var moreText = document.getElementById("morea4");
+  var btnText = document.getElementById("myBtna4");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+	i = 1;
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+	i = 0;
+  }
+} 
+
+
+/* Function *
+-------------------------------------------------------*/
