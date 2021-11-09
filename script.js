@@ -390,6 +390,25 @@ function addenchancementDropList() {
     }
 }
 
+// function
+/* enchancement footer *
+-------------------------------------------------------*/
+function addenchancementDropList2() {
+
+    var options = ["Enchancement1", "Enchancement2",];
+    var links = ["enchancement.html", "enchancement2.html"]
+    var m = 1;
+    for (var i = 0; i < options.length; i++) {
+        var node = document.createElement("li");
+        var a = document.createElement('a');
+        var textnode = document.createTextNode(options[i]);
+        a.href = links[i];
+        a.appendChild(textnode);
+        node.appendChild(a);
+        document.getElementById("enchancementDropList2").appendChild(node);
+    }
+}
+
 /* timer 2 *
 -------------------------------------------------------*/
 setInterval(function runTimer2() {
@@ -498,5 +517,31 @@ function myFunctionproducta4() {
 } 
 
 
-/* Function *
+/* Function loan calculator *
+-------------------------------------------------------*/
+
+function showpay() {
+ if ((document.calc.loan.value == null || document.calc.loan.value.length == 0) ||
+     (document.calc.months.value == null || document.calc.months.value.length == 0)
+||
+     (document.calc.rate.value == null || document.calc.rate.value.length == 0))
+ { document.calc.pay.value = "Incomplete data";
+ }
+ else
+ {
+ var princ = document.calc.loan.value;
+ var term  = document.calc.months.value;
+ var intr   = document.calc.rate.value / 1200;
+ document.calc.pay.value = princ * intr / (1 - (Math.pow(1/(1 + intr), term)));
+ }
+
+// payment = principle * monthly interest/(1 - (1/(1+MonthlyInterest)*Months))
+
+}
+
+// -->
+
+
+
+/* Function backup *
 -------------------------------------------------------*/
